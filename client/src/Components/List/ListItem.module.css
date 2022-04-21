@@ -1,0 +1,41 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.itemData {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.itemData input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.controlers {
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.editItemForm {
+    display: flex;
+}
+
+.editItemForm button {
+    font-size: 16px;
+    background-color: #827397;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}

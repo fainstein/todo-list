@@ -1,0 +1,54 @@
+.preview { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.preview span {
+    margin-right: 10px;
+}
+
+.preview p {
+    margin: 0;
+}
+
+.addItemForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addItemForm input {
+    font-size: 16px;
+    margin-left: 23px;
+}
+
+.addItemForm button {
+    font-size: 16px;
+    background-color: #827397;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.buttons {
+    display: flex;
+justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .preview {
+        margin-bottom: 1.5rem;
+    }
+    .addItemForm {
+        flex-direction: column;
+    }
+
+    .addItemForm input {
+        margin: 0 0 10px;
+    }
+    
+}

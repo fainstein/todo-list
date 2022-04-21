@@ -1,0 +1,21 @@
+.listCard {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 400px;
+/* background-color: #E9D5DA; */
+background-color: rgb(221, 190, 198);
+padding: 3%;
+}
+
+.listCard h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .listCard {
+        width: 90vw;
+    }
+}
