@@ -15,10 +15,11 @@ const List = (props) => {
             id={item.item_id}
             name={item.name}
             completed={item.completed}
+            updateList={props.updateList}
           ></ListItem>
         );
       })}
-      <AddItem />
+      <AddItem updateList={props.updateList} />
     </Card>
   );
 };

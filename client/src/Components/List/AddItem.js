@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./AddItem.module.css";
 import axios from "axios";
 
-const AddItem = () => {
+const AddItem = (props) => {
   const [isAdding, setIsAdding] = useState(false);
   const [newItemName, setNewItemName] = useState("");
 
@@ -22,6 +22,7 @@ const AddItem = () => {
       item: newItemName,
     });
     setNewItemName("");
+    props.updateList();
     setIsAdding(false);
   };
 

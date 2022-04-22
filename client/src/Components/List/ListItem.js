@@ -13,6 +13,7 @@ const ListItem = (props) => {
       completed: !itemCompleted,
       id: props.id,
     });
+    props.updateList();
     setItemCompleted(!itemCompleted);
   };
 
@@ -24,6 +25,7 @@ const ListItem = (props) => {
     axios.post("http://localhost:4000/deleteItem", {
       id: props.id,
     });
+    props.updateList();
   };
 
   const editConfirmHandler = (e) => {
@@ -33,6 +35,7 @@ const ListItem = (props) => {
       name: itemName,
       id: props.id,
     });
+    props.updateList();
   };
 
   const itemNameChangeHandler = (e) => {
