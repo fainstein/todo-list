@@ -22,7 +22,6 @@ function App() {
     try {
       setIsLoading(true);
       const response = await fetch("http://localhost:4000/");
-      console.log(response);
       if (!response.ok) {
         throw new Error("Something went wrong...");
       }

@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  const ITEM_QUERY = `SELECT * FROM todomanager.items`;
+  const ITEM_QUERY = `SELECT * FROM u206558025_todoclient.items`;
   connection.query(ITEM_QUERY, (err, response) => {
     if (err) {
       console.log(err);
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.put("/completeItem", (req, res) => {
-  const COMPLETE_QUERY = `UPDATE todomanager.items SET completed = ${
+  const COMPLETE_QUERY = `UPDATE u206558025_todoclient.items SET completed = ${
     req.body.completed ? 1 : 0
   } WHERE item_id = ${req.body.id};`;
   connection.query(COMPLETE_QUERY, (err, response) => {
@@ -32,7 +32,7 @@ app.put("/completeItem", (req, res) => {
 
 app.put("/editItem", (req, res) => {
   console.log(req.body);
-  const EDIT_QUERY = `UPDATE todomanager.items SET name = '${req.body.name}' WHERE item_id = ${req.body.id};`;
+  const EDIT_QUERY = `UPDATE u206558025_todoclient.items SET name = '${req.body.name}' WHERE item_id = ${req.body.id};`;
   connection.query(EDIT_QUERY, (err, response) => {
     if (err) {
       console.log(err);
@@ -41,7 +41,7 @@ app.put("/editItem", (req, res) => {
 });
 
 app.post("/addItem", (req, res) => {
-  const ADD_QUERY = `INSERT INTO todomanager.items (name, completed) VALUES ('${req.body.item}', '0')`;
+  const ADD_QUERY = `INSERT INTO u206558025_todoclient.items (name, completed) VALUES ('${req.body.item}', '0')`;
   connection.query(ADD_QUERY, (err) => {
     if (err) {
       console.log(err);
@@ -50,7 +50,7 @@ app.post("/addItem", (req, res) => {
 });
 
 app.post("/deleteItem", (req, res) => {
-  const DELETE_QUERY = `DELETE FROM todomanager.items WHERE item_id = ${req.body.id}`;
+  const DELETE_QUERY = `DELETE FROM u206558025_todoclient.items WHERE item_id = ${req.body.id}`;
   connection.query(DELETE_QUERY, (err) => {
     if (err) {
       console.log(err);
