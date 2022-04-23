@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ListItem.module.css";
-import Hr from "../UI/Hr";
+import Hr from "../../UI/Hr";
 import axios from "axios";
 
 const ListItem = (props) => {
@@ -13,7 +13,7 @@ const ListItem = (props) => {
       completed: !itemCompleted,
       id: props.id,
     });
-    props.updateList();
+    props.updateList(props.listId);
     setItemCompleted(!itemCompleted);
   };
 
@@ -25,7 +25,7 @@ const ListItem = (props) => {
     axios.post("http://localhost:4000/deleteItem", {
       id: props.id,
     });
-    props.updateList();
+    props.updateList(props.listId);
   };
 
   const editConfirmHandler = (e) => {
@@ -35,7 +35,7 @@ const ListItem = (props) => {
       name: itemName,
       id: props.id,
     });
-    props.updateList();
+    props.updateList(props.listId);
   };
 
   const itemNameChangeHandler = (e) => {

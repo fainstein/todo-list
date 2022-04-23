@@ -1,0 +1,13 @@
+.listFolder {
+    cursor: pointer;
+}
+
+.listFolderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deleteBtn {
+    cursor: pointer;
+}

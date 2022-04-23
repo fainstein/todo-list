@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
-import List from "./Components/List/List";
+import Lists from "./Components/Lists/Lists";
 
 function App() {
   // const DUMMY_TODO_LIST = [
@@ -13,12 +13,11 @@ function App() {
   //   { id: 3, name: "Eat food", completed: false },
   // ];
 
-  const [list, setList] = useState([]);
+  const [lists, setLists] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-
-  const getList = useCallback(async () => {
+  const getLists = useCallback(async () => {
     try {
       setIsLoading(true);
       const response = await fetch("http://localhost:4000/");
@@ -26,7 +25,7 @@ function App() {
         throw new Error("Something went wrong...");
       }
       const data = await response.json();
-      setList(data);
+      setLists(data);
     } catch (error) {
       setError(error);
     }
@@ -34,19 +33,19 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getList();
-  }, [getList]);
+    getLists();
+  }, [getLists]);
 
-  let listDisplay;
+  let listsDisplay;
   if (isLoading) {
-    listDisplay = <p>Loading...</p>;
+    listsDisplay = <p>Loading...</p>;
   } else if (error) {
-    listDisplay = <p>Something went wrong...</p>;
+    listsDisplay = <p>Something went wrong...</p>;
   } else {
-    listDisplay = <List listData={list} updateList={getList} />;
+    listsDisplay = <Lists listsArray={lists} updateLists={getLists} />;
   }
 
-  return <main>{listDisplay} </main>;
+  return <main>{listsDisplay}</main>;
 }
 
 export default App;

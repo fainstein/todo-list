@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import styles from "./AddItem.module.css";
 import axios from "axios";
-
-const AddItem = (props) => {
+import styles from './List/AddItem.module.css';
+const AddList = (props) => {
   const [isAdding, setIsAdding] = useState(false);
-  const [newItemName, setNewItemName] = useState("");
+  const [newListName, setNewListName] = useState("");
 
   const openFormHandler = () => {
     setIsAdding(true);
@@ -12,22 +11,22 @@ const AddItem = (props) => {
 
   const cancelHandler = (e) => {
     e.preventDefault();
-    setNewItemName("");
+    setNewListName("");
     setIsAdding(false);
   };
 
   const addHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/addItem", {
-      item: newItemName,
+    axios.post("http://localhost:4000/addList", {
+      list: newListName,
     });
-    setNewItemName("");
-    props.updateList();
+    setNewListName("");
+    props.updateLists();
     setIsAdding(false);
   };
 
   const inputChangeHandler = (e) => {
-    setNewItemName(e.target.value);
+    setNewListName(e.target.value);
   };
 
   const addItemPreview = (
@@ -41,11 +40,11 @@ const AddItem = (props) => {
   const addItemForm = (
     <form className={styles.addItemForm}>
       <input
-        value={newItemName}
+        value={newListName}
         onChange={inputChangeHandler}
         name="newItem"
         type="text"
-        placeholder="Buy snacks..."
+        placeholder="Movies 🍿"
       ></input>
       <div className={styles.buttons}>
         <button onClick={cancelHandler}>Cancel</button>
@@ -56,4 +55,4 @@ const AddItem = (props) => {
   return <>{isAdding ? addItemForm : addItemPreview}</>;
 };
 
-export default AddItem;
+export default AddList;
