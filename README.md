@@ -1,4 +1,4 @@
-# todo-list
+# First time run
 Inside server folder, use **npm run dev** to install all the dependencies and to execute the project
 
 # Execute the project
