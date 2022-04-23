@@ -1,8 +1,8 @@
 # First time run
-Inside server folder, use **npm run dev** to install all the dependencies and to execute the project
+Inside server folder, use **npm run dev** to install all the dependencies and to execute the project.
 
 # Execute the project
-When dependencies install, you can just execute with **npm start**
+When dependencies are installed, inside server folder use **npm start** to execute the project.
 
 # Versions
 Node: v16.14.0
